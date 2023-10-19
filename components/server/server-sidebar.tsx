@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { ServerHeader } from "./server-header";
-
+import { ServerSearch } from "./server-search";
 
 interface ServerSidebarProps {
   serverId: string;
@@ -81,7 +81,7 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
       <ServerHeader server={server} role={role} />
       <ScrollArea className="flex-1 px-3">
         <div className="mt-2">
-          {/* <ServerSearch
+          <ServerSearch
             data={[
               {
                 label: "Text Channels",
@@ -120,7 +120,7 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
                 })),
               },
             ]}
-          /> */}
+          />
         </div>
         <Separator className="bg-zinc-200 dark:bg-zinc-700 rounded-md my-2" />
         {!!textChannels?.length && (
